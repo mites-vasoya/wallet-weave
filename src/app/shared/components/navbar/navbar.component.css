@@ -1,0 +1,112 @@
+.navbar {
+    box-shadow: 0px 0px 10px 0px rgb(71, 71, 71);
+    display:flex;
+    width: 100%;
+    height: 55px;
+}
+
+.navbar > .title {
+    /* border : 2px solid red; */
+    width : 15vw;
+    height : fit-content;
+    padding : 5px 10px; 
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin : auto auto auto 1.5vw;
+}
+
+.navbar > .lists {
+    /* border : 1px solid blue; */
+    margin : auto 0 auto auto;
+    width: 85vw;
+    height: 40px;
+    display: flex;
+}
+
+.lists ul {
+    list-style-type: none;
+    padding: 0%;
+}
+
+.lists ul li {
+    cursor: pointer;
+}
+
+.options {
+    /* border : 1px solid hotpink; */
+    margin : 0px 30px;
+}
+
+.options > ul {
+    /* border : 1px solid green; */
+    margin : 2px 0 auto 0 ;
+    display: flex;
+    width: fit-content;
+}
+.options > ul > li {
+    width: fit-content;
+    height: fit-content;
+    /* border : 1px solid green; */
+    margin : 0 10px 0 10px;
+    padding : 9px 13px;
+    transition: ease-in-out 0.25s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: relative;
+}
+
+@keyframes optionAnimation {
+    to {
+        width: 84%;
+    }
+  }
+
+.options > ul > li::before {
+    content : "";
+    position: absolute;
+    width : 0%;
+    height : 3px;
+    background-color: green;
+    bottom : 0px;
+    left : 8%;
+}
+
+.options > ul > li:hover::before {
+    content : "";
+    animation: optionAnimation 0.8s both ease;
+}
+
+.login-register {
+    /* border : 1px solid firebrick; */
+    margin: 0 50px 0 auto;
+}
+
+.login-register > ul {
+    margin : 0;
+    display: flex;
+    width: fit-content;
+}
+
+.login-register > ul > li {
+    margin : 0 7px auto 7px;
+    padding : 5px 13px;
+    width : 120px;
+    height: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border : 3px solid black;
+    border-radius: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    transition: ease-in-out 0.3s;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 400;
+}
+
+.login-register > ul > li:hover {
+    background-color: white;
+    color: black;
+}
+
