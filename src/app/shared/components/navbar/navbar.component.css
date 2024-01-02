@@ -1,8 +1,10 @@
 .navbar {
     box-shadow: 0px 0px 10px 0px rgb(71, 71, 71);
+    background-color: #101010;
+    color: white;
     display:flex;
     width: 100%;
-    height: 55px;
+    height: 80px;
 }
 
 .navbar > .title {
@@ -10,7 +12,7 @@
     width : 15vw;
     height : fit-content;
     padding : 5px 10px; 
-    font-size: 30px;
+    font-size: 35px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin : auto auto auto 1.5vw;
 }
@@ -19,7 +21,7 @@
     /* border : 1px solid blue; */
     margin : auto 0 auto auto;
     width: 85vw;
-    height: 40px;
+    height: fit-content;
     display: flex;
 }
 
@@ -39,27 +41,37 @@
 
 .options > ul {
     /* border : 1px solid green; */
-    margin : 2px 0 auto 0 ;
+    margin : auto 0 auto 0 ;
     display: flex;
     width: fit-content;
 }
 .options > ul > li {
     width: fit-content;
-    height: fit-content;
+    height: 50px;
     /* border : 1px solid green; */
-    margin : 0 10px 0 10px;
-    padding : 9px 13px;
+    border-radius: 10px;
+    margin : 0px 10px 0 10px;
+    padding : 12px 13px;
     transition: ease-in-out 0.25s;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     position: relative;
+    box-sizing: border-box;
+    transition: 0.3s ease;
 }
 
-@keyframes optionAnimation {
+.options > ul > li:hover {
+    background-color: rgb(82, 204, 241);
+    border-radius: 10px;
+    color : black;
+    box-shadow: 0px 0px 10px 0px rgb(100, 100, 100)
+}
+
+/* @keyframes optionAnimation {
     to {
-        width: 84%;
+        width: 100%;
     }
-  }
+  } */
 
 .options > ul > li::before {
     content : "";
@@ -68,13 +80,13 @@
     height : 3px;
     background-color: green;
     bottom : 0px;
-    left : 8%;
+    left : 0%;
 }
 
-.options > ul > li:hover::before {
+/* .options > ul > li:hover::before {
     content : "";
     animation: optionAnimation 0.8s both ease;
-}
+} */
 
 .login-register {
     /* border : 1px solid firebrick; */
@@ -88,17 +100,18 @@
 }
 
 .login-register > ul > li {
-    margin : 0 7px auto 7px;
-    padding : 5px 13px;
-    width : 120px;
-    height: 40px;
+    margin : auto 7px auto 7px;
+    padding : 9px 13px;
+    width : 150px;
+    height: 50px;
     text-align: center;
-    background-color: black;
-    color: white;
-    border : 3px solid black;
-    border-radius: 2px;
+    background-color: rgb(53, 184, 245);
+    box-shadow: 0px 0px 7px 2px rgb(63, 63, 63);
+    color: black;
+    border-radius: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 900;
     transition: ease-in-out 0.3s;
     box-sizing: border-box;
     text-align: center;
