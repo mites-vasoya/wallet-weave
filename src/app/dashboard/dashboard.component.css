@@ -1,0 +1,211 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-panel {
+    border : 1px solid blue;
+    height : fit-content;
+    width : 70vw;
+    box-sizing: border-box;
+}
+
+.top-cards {
+    border : 1px solid rgb(37, 37, 37);
+    border-radius: 15px;
+    background-color: rgb(37, 37, 37);
+    box-shadow: 0 5px 15px -10px rgb(112, 112, 112);
+    box-sizing: border-box;
+    width : 98%;
+    height : 15vh;
+    margin: 0.5vw auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card1, .card2, .card3 {
+    border: 1px solid red;
+    height : 100%;
+    width: 30%;
+    display: flex;  
+}
+
+.card-pbar {
+    border : 1px solid rgb(15, 170, 231);
+    margin : auto 0 auto 10px;
+    width: 200px;
+    height: 100%;
+}
+
+.card-content {
+    border : 1px solid green;
+    margin : auto auto auto auto;
+    width: calc(100% - 200px);
+    height : fit-content;
+    padding : 10px 10px;
+    box-sizing: border-box;
+    color: rgb(202, 202, 202);
+}
+
+.card-content p {
+    margin: 0;
+    margin: auto auto auto 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+.card-content p.title {
+    border : 1px solid red;
+    font-size: 25px;
+    color: rgb(148, 148, 148);
+}
+
+
+.card-content p.balance {
+    border : 1px solid red;
+    font-size: 21px;
+    color: rgb(173, 173, 173);
+}
+
+.card-content p.bal-updown {
+    border : 1px solid red;
+}
+
+.left-panel > .middle-cards {
+    border : 1px solid rgb(37, 37, 37);
+    border-radius: 15px;
+    width : 98%;
+    height : 15vh; 
+    margin : 0.5vw auto;
+    background-color: rgb(37, 37, 37);
+    box-shadow: 0 5px 15px -10px rgb(112, 112, 112);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* .middle-cards >  */
+
+.left-panel > .charts {
+    /* border : 1px solid green; */
+    height : 55vh;
+    margin: 0.5vw auto;
+}
+
+.charts > .chart1 {
+    border : 1px solid rgb(37, 37, 37);
+    border-radius: 15px;
+    background-color: rgb(37, 37, 37);
+    box-shadow: 0 5px 15px -10px rgb(112, 112, 112);
+    width: 98%;
+    height : 100%;
+    margin : auto auto;
+    box-sizing: border-box;
+}
+
+.right-panel {
+    border : 1px solid rgb(247, 0, 255);
+    height : fit-content;
+    width : 30vw;
+    box-sizing: border-box;
+    padding : 10px 10px;
+}
+
+.right-panel > .cards-list {
+    border : 1px solid greenyellow;
+    color: white;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    height : fit-content;
+}
+
+.cards-list > p.title {
+    border : 1px solid red;
+    margin : 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+.cards-list > .card-slider {
+    border : 1px solid khaki;
+    margin : 10px auto;
+    height : fit-content;
+    width : 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-slider > .next-btn, .card-slider > .prev-btn {
+    border : 1px solid grey;
+    background-color: aqua;
+    height : 100px;
+    width : 10%;
+    margin : auto 0;
+    box-sizing: border-box;
+}
+
+.card-slider > .next-btn:hover, .card-slider > .prev-btn:hover {
+    cursor: pointer;
+}
+
+.cards-list > .card-slider > .cards {
+    border : 1px solid red;
+    height : 30vh;
+    width : 80%;
+    display: flex;
+    position: relative;
+}
+
+.card-slider > .cards > .card {
+    border-radius: 30px;
+    height : 28vh;
+    width : 90%;
+    margin : 1vh 5%;
+    position: absolute;
+    z-index: 5;
+}
+
+.card-slider > .cards > .card:nth-child(1) {
+    background: linear-gradient(to bottom right, #3498db, #9fbbd8);
+    z-index: 3;
+}
+
+.card-slider > .cards > .card:nth-child(2) {
+    transform: rotate(3.5deg);
+    background: linear-gradient(to bottom right, #e74c3c, #1abc9c);
+    z-index: 2;
+}
+
+.card-slider > .cards > .card:nth-child(3) {
+    transform: rotate(6deg);
+    background: linear-gradient(to bottom right, #2ecc71, #e74c3c);
+    z-index: 1;
+}
+
+.right-panel > .recent-transactions {
+    border : 1px solid white;
+    height : fit-content;
+    width : 100%;
+}
+
+.recent-transactions p.title {
+    color : white;
+    margin : 5px 10px;
+    font-size: 25px;
+    height: fit-content;
+}
+
+.recent-transactions > .transactions-list {
+    border : 1px solid green;
+    margin : 5px 10px;
+    padding : 2px 10px;
+    color : white;
+}
+
+.transactions-list > ol {
+    margin : 0;
+}
+
+.transactions-list > ol > .transaction {
+    margin : 3px 0;
+}

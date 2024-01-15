@@ -1,1 +1,45 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="left-panel">
+    <p>Place Photos And Quoted Here</p>
+  </div>
+  <div class="right-panel">
+    <div class="login-div">
+      <p class="title">Login</p>
+      <div class="form">
+        <div>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Enter Email"
+            #emailField
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="password"
+            id="password"
+            placeholder="Enter Password"
+            #passwordField
+          />
+        </div>
+        <div>
+          <input type="button" value="Login" id="login-btn" (click)="loginBtn(emailField.value, passwordField.value)"/>
+        </div>
+      </div>
+      <div class="signin-options">
+        <div class="option">
+          <input type="button" value="Login In Using Google" class="btn"/>
+        </div>
+      </div>
+      <hr />
+
+      <div class="register-btn">
+        <div>
+          <input type="button" value="Register" class="btn" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

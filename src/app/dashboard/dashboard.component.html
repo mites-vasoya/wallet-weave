@@ -1,0 +1,126 @@
+<div class="dashboard">
+  <div class="left-panel">
+    <div class="top-cards">
+      <div class="card1">
+        <mat-progress-spinner
+          class="card-pbar"
+          color="primary"
+          mode="determinate"
+          diameter="110"
+          [value]="progressValue"
+        ></mat-progress-spinner>
+        <div class="card-content">
+          <p class="title">Cash</p>
+          <p class="balance">20000</p>
+          <p class="bal-updown">Up/Down %</p>
+        </div>
+      </div>
+      <div class="card2">
+        <mat-progress-spinner
+          class="card-pbar"
+          color="primary"
+          mode="determinate"
+          diameter="110"
+          [value]="progressValue"
+        ></mat-progress-spinner>
+        <div class="card-content">
+          <p class="title">Bank</p>
+          <p class="balance">20000</p>
+          <p class="bal-updown">Up/Down %</p>
+        </div>
+      </div>
+      <div class="card3">
+        <mat-progress-spinner
+          class="card-pbar"
+          color="primary"
+          mode="determinate"
+          diameter="110"
+          [value]="progressValue"
+        ></mat-progress-spinner>
+        <div class="card-content">
+          <p class="title">UPI Lite</p>
+          <p class="balance">20000</p>
+          <p class="bal-updown">Up/Down %</p>
+        </div>
+      </div>
+    </div>
+    <div class="middle-cards">
+      <div class="card1">
+        <mat-progress-spinner
+          class="card-pbar"
+          color="primary"
+          mode="determinate"
+          diameter="110"
+          [value]="progressValue"
+        ></mat-progress-spinner>
+        <div class="card-content">
+          <p class="title">Total Expense</p>
+          <p class="balance">20000</p>
+          <p class="bal-updown">Up/Down %</p>
+        </div>
+      </div>
+      <div class="card1">
+        <mat-progress-spinner
+          class="card-pbar"
+          color="primary"
+          mode="determinate"
+          diameter="110"
+          [value]="progressValue"
+        ></mat-progress-spinner>
+        <div class="card-content">
+          <p class="title">Total Expense</p>
+          <p class="balance">20000</p>
+          <p class="bal-updown">Up/Down %</p>
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="chart1">
+        <google-chart
+      [data]="chartData"
+      [width]="chartWidth"
+      [height]="chartHeight"
+      [type]="chartType"
+    ></google-chart>
+      </div>
+    </div>
+  </div>
+  <div class="right-panel">
+    <div class="cards-list">
+      <p class="title">My Cards</p>
+      <div class="card-slider">
+        <div class="prev-btn"></div>
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+        <div class="next-btn"></div>
+      </div>
+    </div>
+    <div class="recent-transactions">
+      <p class="title">
+        Recent Transactions
+      </p>
+      <div class="transactions-list">
+        <ol>
+          <li class="transaction">Transaction-1</li>
+          <li class="transaction">Transaction-2</li>
+          <li class="transaction">Transaction-3</li>
+          <li class="transaction">Transaction-4</li>
+          <li class="transaction">Transaction-5</li>
+          <li class="transaction">Transaction-6</li>
+          <li class="transaction">Transaction-7</li>
+          <li class="transaction">Transaction-8</li>
+          <li class="transaction">Transaction-9</li>
+          <li class="transaction">Transaction-10</li>
+          <li class="transaction">Transaction-11</li>
+          <li class="transaction">Transaction-12</li>
+          <li class="transaction">Transaction-13</li>
+          <li class="transaction">Transaction-14</li>
+          <li class="transaction">Transaction-15</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
