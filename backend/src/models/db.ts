@@ -1,4 +1,5 @@
 import { Pool } from 'pg';
+import {object} from "joi";
 
 const pool = new Pool({
     user: 'mitesh',
@@ -13,6 +14,8 @@ export class db {
     }
 
     table : string = "";
+    query : string = "";
+    where : string = "";
 
     async insert(data : object) {
         let colArray = Object.keys(data);
@@ -26,13 +29,29 @@ export class db {
         return result.rows;
     }
 
-    async selectOne(fields : string = "*", where : string = "") {
-        let query = "SELECT " + fields + "FROM " + this.table + where
-        let result = await pool.query(query);
-        
+    async selectOne(fields : string = "*") {
+        this.query = "SELECT " + fields + " FROM " + this.table + this.where;
+        let result = await pool.query(this.query);
+
         if(!result.rowCount) {
             return [];
-        } 
+        }
         return result.rows;
+    }
+
+    async update() {
+      let result = await pool.query(this.query);
+
+      if(!result.rowCount) return 0;
+
+      return result.rowCount;
+    }
+
+    async updateOne(data : object) {
+     this.query = `UPDATE ${this.table} SET ${Object.keys(data)} = '${Object.values(data)}' ${this.where}`;
+      let result : number = await this.update();
+
+      console.log("Query : ", this.query);
+      console.log(result);
     }
 }

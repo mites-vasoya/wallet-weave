@@ -12,6 +12,7 @@ export const validationFunc = async (schema : any, body_data : any) => {
 }
 
 export const responseFunc = (status : number, message : string, data : any[]) => {
+  // console.log(message, data);
     return {
         status : status,
         message : message,
@@ -19,14 +20,15 @@ export const responseFunc = (status : number, message : string, data : any[]) =>
     }
 }
 
+//Create hashed password
 export const hashPassword = async (password : string) => {
     // Generate a salt
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
-  
+
     // Hash the password with the generated salt
     const hashedPassword = await bcrypt.hash(password, salt);
-  
+
     return hashedPassword;
   }
 
