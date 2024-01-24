@@ -9,13 +9,18 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { LoginComponent } from './user/login/login.component';
+import {NavBtnHoverDirective} from "./shared/directives/navBtnHover.directive";
+import {SignupComponent} from "./user/signup/signup.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    NavBtnHoverDirective,
   ],
   imports: [
     BrowserModule,

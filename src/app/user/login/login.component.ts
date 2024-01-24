@@ -12,6 +12,7 @@ export class LoginComponent {
 loginBtn(email : string, password : string) {
   this.email = email;
   this.password = password;
-}
 
+  console.log("Email & Password : ", this.email, this.password);
+}
 }

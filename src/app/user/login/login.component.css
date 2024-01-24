@@ -34,66 +34,65 @@
   border-radius: 20px;
   width: 60%;
   height: fit-content;
-  padding: 20px 20px;
+  padding: 30px 20px;
   margin: auto auto;
-  background: rgba(255, 255, 255, 0.1); 
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 10px 0px rgba(37, 37, 37, 0.938);
 }
 
 .login-div > p.title {
-    /* border: 1px solid blue; */
-    margin : 0.5vh auto;
-    padding : 5px 0px;
-    width: fit-content;
-    height: fit-content;
-    font-size: 5vh;
-    position: relative;
+  margin: 0.2vh auto 3vh auto;
+  padding: 0px 0px;
+  width: fit-content;
+  height: fit-content;
+  font-size: 5vh;
+  position: relative;
 }
 
 .login-div > p.title::before {
-    content : '';
-    color : white;
-    width : 100%;
-    height : 4px;
-    bottom: 0px;
-    background-color: rgb(53, 184, 245);
-    position: absolute;
+  content: '';
+  color: white;
+  width: 100%;
+  height: 4px;
+  bottom: 0px;
+  background-color: #875943;
+  position: absolute;
 }
 
 .login-div > .form {
-    /* border : 1px solid red; */
-    display: block;
-    width : fit-content;
-    min-width: 20vw;
-    margin : 10px auto;
+  /* border : 1px solid red; */
+  display: block;
+  width: fit-content;
+  min-width: 20vw;
+  margin: 10px auto;
 }
 
 .form > div {
-    margin : 10px auto;
+  margin: 10px auto;
 }
 
 .form > div > #email {
-    border : 1px solid green;
-    height : 60px;
-    width : 20vw;
-    padding : 5px 10px;
-    font-size : 18px;
-    box-sizing: border-box;
+  border: 1px solid green;
+  height: 60px;
+  width: 20vw;
+  padding: 5px 10px;
+  font-size: 18px;
+  box-sizing: border-box;
 }
 
 .form > div > #password {
-    border : 1px solid green;
-    height : 60px;
-    width : 20vw;
-    padding : 5px 10px;
-    font-size : 18px;
-    box-sizing: border-box;
+  border: 1px solid green;
+  height: 60px;
+  width: 20vw;
+  padding: 5px 10px;
+  font-size: 18px;
+  box-sizing: border-box;
 }
 
 .form > div > #email:focus, .form > div > #password:focus {
-    /* border : 1px solid red; */
+  /* border : 1px solid red; */
   outline: none;
 }
 
@@ -101,8 +100,8 @@
   border: 0px solid red;
   outline: none;
   border-radius: 6px;
-  background-color: rgb(53, 184, 245);
-  color: black;
+  background-color: #875943;
+  color: white;
   height: 60px;
   width: 20vw;
   font-size: 28px;
@@ -111,62 +110,61 @@
 }
 
 .signin-options {
-    /* border : 1px solid white; */
-    margin : 10px auto 20px auto;
+  /* border : 1px solid white; */
+  margin: 10px auto 20px auto;
 }
 
 .signin-options > .option {
-    /* border : 1px solid red; */
-    width : 20vw;
-    height: 5vh;
-    margin : auto auto;
+  /* border : 1px solid red; */
+  width: 20vw;
+  height: 5vh;
+  margin: auto auto;
 }
 
 .signin-options > .option > .btn {
-    border : 1px solid blue;
-    border-radius: 3px;
-    height: 100%;
-    width : 100%;
-    font-size: 20px;
-    transition: ease 0.5s;
+  /*border: 1px solid blue;*/
+  border-radius: 3px;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  transition: ease 0.5s;
 }
 
 .signin-options > .option > .btn:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .signin-options > .option > .btn:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 .login-div > .register-btn {
-    /* border : 1px solid red; */
-    width: 100%;
-    height: 100%;
+  /* border : 1px solid red; */
+  width: 100%;
+  height: 100%;
 }
 
 .register-btn > div {
-    /* border : 1px solid yellow; */
-    width: fit-content;
-    height: fit-content;
-    margin : auto auto;
-    margin : 20px auto 10px auto;
+  /* border : 1px solid yellow; */
+  width: fit-content;
+  height: fit-content;
+  margin: 20px auto 10px auto;
 
 }
 
 .register-btn > div > .btn {
-    /* border : 1px solid green; */
-    width : 20vw;
-    height: 5vh;
-    margin : auto auto;
-    font-size: 20px;
-    transition: ease 0.5s;
+  /* border : 1px solid green; */
+  width: 20vw;
+  height: 5vh;
+  margin: auto auto;
+  font-size: 20px;
+  transition: ease 0.5s;
 }
 
 .register-btn > div > .btn:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .register-btn > div > .btn:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
