@@ -11,6 +11,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { LoginComponent } from './user/login/login.component';
 import {NavBtnHoverDirective} from "./shared/directives/navBtnHover.directive";
 import {SignupComponent} from "./user/signup/signup.component";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {SignupComponent} from "./user/signup/signup.component";
     AppRoutingModule,
     NoopAnimationsModule,
     MatProgressSpinnerModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

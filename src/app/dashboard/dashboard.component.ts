@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ChartType } from 'angular-google-charts';
+import {ApiService} from "../service/api.service";
 
 
 @Component({
@@ -7,9 +8,16 @@ import { ChartType } from 'angular-google-charts';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
   progressValue = 100;
+  wallet_accounts: any = {};
+
+  constructor(private apiService: ApiService) {}
+
   ngOnInit(): void {
+    this.apiService.fetchUsersWallet(1).subscribe((data) => {
+      this.wallet_accounts = data.data;
+    })
   }
 
   chartData = [

@@ -5,7 +5,7 @@ import {dbusers_wallet} from "../models/dbusers_wallet";
 
 const router = express.Router();
 
-router.get("/list", listWalletSchema, listWallet);
+router.post("/list", listWalletSchema, listWallet);
 
 async function listWalletSchema(req: Request, res: Response, next: NextFunction) {
   const schema = Joi.object({

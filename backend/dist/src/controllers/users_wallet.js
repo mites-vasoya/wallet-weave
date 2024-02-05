@@ -17,7 +17,7 @@ const joi_1 = __importDefault(require("joi"));
 const functions_1 = require("../functions/functions");
 const dbusers_wallet_1 = require("../models/dbusers_wallet");
 const router = express_1.default.Router();
-router.get("/list", listWalletSchema, listWallet);
+router.post("/list", listWalletSchema, listWallet);
 function listWalletSchema(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const schema = joi_1.default.object({
