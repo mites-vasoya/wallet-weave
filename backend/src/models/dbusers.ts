@@ -2,6 +2,7 @@ import {db} from "./db";
 import bcrypt from "bcrypt";
 import {ReturnWithData} from "../functions/constant_types";
 import moment from "moment/moment";
+import {dbusers_wallet} from "./dbusers_wallet";
 
 export class dbusers extends db {
   constructor() {
@@ -74,6 +75,11 @@ export class dbusers extends db {
       return_data.message = "User_Not_Found";
       return return_data;
     }
+
+    console.log("User ID : ", result[0].id)
+    let dbwallet_accountObj = new dbusers_wallet();
+    let createDefaultWallet = await dbwallet_accountObj.assignDefaultAccount(result[0].id);
+
 
     let return_result: any = {
       first_name: result[0].first_name,

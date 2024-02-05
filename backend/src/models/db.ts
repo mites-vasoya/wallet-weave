@@ -16,17 +16,25 @@ export class db {
     table : string = "";
     query : string = "";
     where : string = "";
+    limit : string = "";
+    offset : string = "";
+    orderBy: string = "";
 
     async insert(data : object) {
         let colArray = Object.keys(data);
+
         let dataArray = Object.values(data);
-        let query : string = `INSERT INTO ${this.table} (${colArray.join(', ')}) VALUES (${dataArray.map((_, index) => `$${index + 1}`).join(', ')}) RETURNING *`;
+      console.log("Data Array : ", dataArray);
+      let query : string = `INSERT INTO ${this.table} (${colArray.join(', ')}) VALUES (${dataArray.map((_, index) => `$${index + 1}`).join(', ')}) RETURNING *`;
         let result = await pool.query(query, dataArray);
+
+        console.log("Query : ", dataArray);
 
         if(!result.rowCount) {
             return [];
         }
         return result.rows;
+
     }
 
     async selectOne(fields : string = "*") {
@@ -37,6 +45,19 @@ export class db {
             return [];
         }
         return result.rows;
+    }
+
+    async listRecords(fields : string = "*") {
+      this.query = "SELECT " + fields + " FROM " + this.table + this.where + this.orderBy + this.limit + this.offset;
+
+      console.log("Query : ", this.query);
+
+      let result = await pool.query(this.query);
+
+      if(!result.rowCount) {
+        return [];
+      }
+      return result.rows;
     }
 
     async update() {
