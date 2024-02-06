@@ -23,11 +23,18 @@
     justify-content: space-evenly;
 }
 
-.card1, .card2, .card3 {
+.top-cards .card {
     border: 1px solid red;
     height : 100%;
     width: 30%;
-    display: flex;  
+    display: flex;
+}
+
+.middle-cards .card {
+  border: 1px solid red;
+  height : 100%;
+  width: 30%;
+  display: flex;
 }
 
 .card-pbar {
@@ -75,7 +82,7 @@
     border : 1px solid rgb(37, 37, 37);
     border-radius: 15px;
     width : 98%;
-    height : 15vh; 
+    height : 15vh;
     margin : 0.5vw auto;
     background-color: rgb(37, 37, 37);
     box-shadow: 0 5px 15px -10px rgb(112, 112, 112);

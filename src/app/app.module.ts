@@ -12,7 +12,14 @@ import { LoginComponent } from './user/login/login.component';
 import {NavBtnHoverDirective} from "./shared/directives/navBtnHover.directive";
 import {SignupComponent} from "./user/signup/signup.component";
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule, Routes} from "@angular/router";
 
+
+const appRoute : Routes = [
+  {path : "", component : DashboardComponent},
+  {path : "login", component: LoginComponent},
+  {path : "signup", component: SignupComponent}
+];
 
 @NgModule({
   declarations: [
@@ -29,7 +36,8 @@ import {HttpClientModule} from "@angular/common/http";
     NoopAnimationsModule,
     MatProgressSpinnerModule,
     GoogleChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]

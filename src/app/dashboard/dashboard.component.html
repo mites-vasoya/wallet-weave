@@ -1,7 +1,7 @@
 <div class="dashboard">
   <div class="left-panel">
     <div class="top-cards">
-      <div class="card1">
+      <div class="card" *ngFor="let wallet_account of wallet_accounts">
         <mat-progress-spinner
           class="card-pbar"
           color="primary"
@@ -10,42 +10,14 @@
           [value]="progressValue"
         ></mat-progress-spinner>
         <div class="card-content">
-          <p class="title">{{ wallet_accounts[0].wallet_account_name }}</p>
-          <p class="balance">20000</p>
-          <p class="bal-updown">Up/Down %</p>
-        </div>
-      </div>
-      <div class="card2">
-        <mat-progress-spinner
-          class="card-pbar"
-          color="primary"
-          mode="determinate"
-          diameter="110"
-          [value]="progressValue"
-        ></mat-progress-spinner>
-        <div class="card-content">
-          <p class="title">Bank</p>
-          <p class="balance">20000</p>
-          <p class="bal-updown">Up/Down %</p>
-        </div>
-      </div>
-      <div class="card3">
-        <mat-progress-spinner
-          class="card-pbar"
-          color="primary"
-          mode="determinate"
-          diameter="110"
-          [value]="progressValue"
-        ></mat-progress-spinner>
-        <div class="card-content">
-          <p class="title">UPI Lite</p>
-          <p class="balance">20000</p>
+          <p class="title">{{ wallet_account.wallet_account_name }}</p>
+          <p class="balance">{{ wallet_account.balance }}</p>
           <p class="bal-updown">Up/Down %</p>
         </div>
       </div>
     </div>
     <div class="middle-cards">
-      <div class="card1">
+      <div class="card">
         <mat-progress-spinner
           class="card-pbar"
           color="primary"
@@ -59,7 +31,7 @@
           <p class="bal-updown">Up/Down %</p>
         </div>
       </div>
-      <div class="card1">
+      <div class="card">
         <mat-progress-spinner
           class="card-pbar"
           color="primary"
