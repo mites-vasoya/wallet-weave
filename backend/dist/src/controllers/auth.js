@@ -30,7 +30,9 @@ function loginSchema(req, res, next) {
         if (validate.error) {
             res.json((0, functions_1.responseFunc)(400, validate.message, []));
         }
-        next();
+        else {
+            next();
+        }
     });
 }
 function login(req, res) {

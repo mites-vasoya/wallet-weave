@@ -54,7 +54,7 @@ class db {
     listRecords(fields = "*") {
         return __awaiter(this, void 0, void 0, function* () {
             this.query = "SELECT " + fields + " FROM " + this.table + this.where + this.orderBy + this.limit + this.offset;
-            console.log("Query : ", this.query);
+            // console.log("Query : ", this.query);
             let result = yield pool.query(this.query);
             if (!result.rowCount) {
                 return [];
@@ -74,8 +74,8 @@ class db {
         return __awaiter(this, void 0, void 0, function* () {
             this.query = `UPDATE ${this.table} SET ${Object.keys(data)} = '${Object.values(data)}' ${this.where}`;
             let result = yield this.update();
-            console.log("Query : ", this.query);
-            console.log(result);
+            // console.log("Query : ", this.query);
+            // console.log(result);
         });
     }
 }

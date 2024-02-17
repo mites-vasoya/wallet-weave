@@ -50,7 +50,7 @@ export class db {
     async listRecords(fields : string = "*") {
       this.query = "SELECT " + fields + " FROM " + this.table + this.where + this.orderBy + this.limit + this.offset;
 
-      console.log("Query : ", this.query);
+      // console.log("Query : ", this.query);
 
       let result = await pool.query(this.query);
 
@@ -72,7 +72,7 @@ export class db {
      this.query = `UPDATE ${this.table} SET ${Object.keys(data)} = '${Object.values(data)}' ${this.where}`;
       let result : number = await this.update();
 
-      console.log("Query : ", this.query);
-      console.log(result);
+      // console.log("Query : ", this.query);
+      // console.log(result);
     }
 }

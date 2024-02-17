@@ -13,12 +13,16 @@ import {NavBtnHoverDirective} from "./shared/directives/navBtnHover.directive";
 import {SignupComponent} from "./user/signup/signup.component";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
+import {AuthGuard} from "./service/auth-guard.service";
+import {AuthService} from "./service/auth.service";
+import {ApiService} from "./service/api.service";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 const appRoute : Routes = [
-  {path : "", component : DashboardComponent},
+  {path : "", canActivate : [AuthGuard], component : DashboardComponent},
   {path : "login", component: LoginComponent},
-  {path : "signup", component: SignupComponent}
+  {path : "signup", canActivate : [AuthGuard], component: SignupComponent}
 ];
 
 @NgModule({
@@ -37,9 +41,10 @@ const appRoute : Routes = [
     MatProgressSpinnerModule,
     GoogleChartsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

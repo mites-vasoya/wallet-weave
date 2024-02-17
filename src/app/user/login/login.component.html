@@ -5,41 +5,48 @@
   <div class="right-panel">
     <div class="login-div">
       <p class="title">Login</p>
-      <div class="form">
-        <div>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Enter Email"
-            #emailField
-          />
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div class="form">
+          <div>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter Email"
+              formControlName = "email"
+              #emailField
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+              formControlName = "password"
+              #passwordField
+            />
+          </div>
+          <div>
+            <!--          <input type="button" value="Login" id="login-btn" (click)="loginBtn(emailField.value, passwordField.value)"/>-->
+            <button type="submit" id="login-btn">Login</button>
+          </div>
         </div>
-        <div>
-          <input
-            type="text"
-            name="password"
-            id="password"
-            placeholder="Enter Password"
-            #passwordField
-          />
-        </div>
-        <div>
-          <input type="button" value="Login" id="login-btn" (click)="loginBtn(emailField.value, passwordField.value)"/>
-        </div>
-      </div>
+      </form>
+
       <div class="signin-options">
         <div class="option">
           <input type="button" value="Login In Using Google" class="btn"/>
         </div>
       </div>
-      <hr />
+      <hr/>
 
       <div class="register-btn">
         <div>
-          <input type="button" value="Register" class="btn" />
+          <input type="button" value="Register" class="btn"/>
         </div>
       </div>
+
     </div>
   </div>
 </div>

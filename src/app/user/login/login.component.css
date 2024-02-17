@@ -4,6 +4,11 @@
   box-sizing: border-box;
   color: white;
   display: flex;
+  /*background:  url('P:/Projects/wallet-weave/src/assets/login_background.jpg'), linear-gradient(rgba(139, 69, 19, 0.5), rgba(139, 69, 19, 0.5));*/
+  background-size: 100vw 120vh;
+  /*background-color: rgba(139, 69, 19, 0.5);*/
+  /*background-position: 100vw 130vh;*/
+  /*background-repeat: no-repeat;*/
 }
 
 .left-panel > p {
@@ -61,7 +66,7 @@
   position: absolute;
 }
 
-.login-div > .form {
+.login-div .form {
   /* border : 1px solid red; */
   display: block;
   width: fit-content;

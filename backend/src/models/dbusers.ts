@@ -19,7 +19,7 @@ export class dbusers extends db {
     }
 
     this.where = " WHERE email = '" + email + "'";
-    let fields = "id, first_name, last_name, password, mobile, email, is_active, created_date"
+    let fields = "id, first_name, last_name, password, mobile, email, is_active, created_date";
     let result = await this.selectOne(fields);
 
     if (!result || result.length == 0) {

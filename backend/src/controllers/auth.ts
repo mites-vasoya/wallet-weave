@@ -20,8 +20,9 @@ async function loginSchema(req: Request, res: Response, next: NextFunction) {
 
   if (validate.error) {
     res.json(responseFunc(400, validate.message, []))
+  } else {
+    next();
   }
-  next();
 }
 
 async function login(req: Request, res: Response) {
