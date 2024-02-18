@@ -34,13 +34,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("Login Form Values : ", this.loginForm.value);
     this.email = this.loginForm.value.email;
     this.password = this.loginForm.value.password;
 
     this.authService.login(this.email, this.password).subscribe((data : any) => {
       this.userDetails = data;
-      console.log(this.userDetails);
+      this.authService.saveUserDetails(data.data[0])
     })
   }
 }

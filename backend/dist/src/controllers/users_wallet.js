@@ -34,7 +34,7 @@ function listWallet(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         let users_walletObj = new dbusers_wallet_1.dbusers_wallet();
         let result = yield users_walletObj.listUsersWallets(req.body.user_id);
-        // console.log(result);
+        console.log(result);
         if (result.error) {
             res.json((0, functions_1.responseFunc)(400, result.message, result.data));
         }
