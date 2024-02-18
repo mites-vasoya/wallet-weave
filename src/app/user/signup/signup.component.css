@@ -132,7 +132,7 @@
   box-sizing: border-box;
 }
 
-.form > div > #password {
+.form > div > #password, .form > div > #confirm_password {
   border: 1px solid green;
   height: 60px;
   width: 20vw;
@@ -141,8 +141,8 @@
   box-sizing: border-box;
 }
 
-.form > div > #first_name:focus, .form > div > #email:focus, .form > div > #password:focus {
-  /* border : 1px solid red; */
+.form > div > #first_name:focus, .form > div > #last_name:focus, .form > div > #email:focus, .form > div > #password:focus, .form > div > #confirm_password:focus {
+  /* border : 1px solid red; */ 
   outline: none;
 }
 

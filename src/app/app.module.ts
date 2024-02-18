@@ -17,7 +17,6 @@ import {AuthGuard} from "./service/auth-guard.service";
 import {AuthService} from "./service/auth.service";
 import {ApiService} from "./service/api.service";
 import {ReactiveFormsModule} from "@angular/forms";
-import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 const appRoute : Routes = [
@@ -40,7 +39,6 @@ const appRoute : Routes = [
     AppRoutingModule,
     NoopAnimationsModule,
     MatProgressSpinnerModule,
-    MatFormFieldModule,
     GoogleChartsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoute),
