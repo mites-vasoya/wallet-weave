@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     this.apiService.fetchUsersWallet(1).subscribe((data) => {
       this.wallet_accounts = data.data;
-    })
+    });
   }
 
   chartData = [

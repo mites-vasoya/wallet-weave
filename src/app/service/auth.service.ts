@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../constant';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 interface UserData {
   username: string;
@@ -19,6 +20,7 @@ export class AuthService {
   };
 
   public isUserLoggedIn: boolean = false;
+  private loggedInSubject = new BehaviorSubject<boolean>(this.isLoggedIn());
 
   constructor(private http: HttpClient) {}
 
@@ -29,8 +31,13 @@ export class AuthService {
     });
   }
 
+  logout() {
+    this.clearUserDetails();
+  }
+
   saveUserDetails(userDetails: {}) {
     localStorage.setItem('user_details', JSON.stringify(userDetails));
+    this.loggedInSubject.next(true);
   }
 
   getUserDetails() {
@@ -40,10 +47,15 @@ export class AuthService {
 
   clearUserDetails() {
     localStorage.clear();
+    this.loggedInSubject.next(false);
   }
 
   isLoggedIn(): boolean {
     let user_details = JSON.parse(this.getUserDetails());
     return Object.keys(user_details).length > 0 ? true : false;
+  }
+
+  getLoggedInState(): Observable<boolean> {
+    return this.loggedInSubject.asObservable();
   }
 }

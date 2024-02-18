@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../service/auth.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   email: string = "";
   password: string = "";
-  userDetails : {} = {}
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
+  userDetails : {} = {};
+  isUserLoggedIn : boolean = false;
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router : Router) {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -23,14 +26,12 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
   }
 
   loginBtn(email: string, password: string) {
     this.email = email;
     this.password = password;
-
-    console.log("Email & Password : ", this.email, this.password);
   }
 
   onSubmit() {
@@ -39,7 +40,9 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.email, this.password).subscribe((data : any) => {
       this.userDetails = data;
-      this.authService.saveUserDetails(data.data[0])
+      this.authService.saveUserDetails(data.data[0]);
+
+      this.router.navigate(['/']);
     })
   }
 }
