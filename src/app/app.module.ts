@@ -22,7 +22,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 const appRoute : Routes = [
   {path : "", canActivate : [AuthGuard], component : DashboardComponent},
   {path : "login", component: LoginComponent},
-  {path : "signup", canActivate : [AuthGuard], component: SignupComponent}
+  {path : "signup",  component: SignupComponent}
 ];
 
 @NgModule({

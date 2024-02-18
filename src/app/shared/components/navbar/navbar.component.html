@@ -12,11 +12,11 @@
             </ul>
         </div>
         <div class="login-register">
-            <ul *ngIf="!isUserLoggedIn">
+            <ul *ngIf="!authService.isLoggedIn();">
                 <li routerLink = "login">Login</li>
-                <li routerLink = "sig nup">Register</li>
+                <li routerLink = "signup">Register</li>
             </ul>
-            <ul *ngIf="isUserLoggedIn">
+            <ul *ngIf="authService.isLoggedIn();">    
                 <li (click)="onLogOut()">Logout</li>
             </ul>
         </div>

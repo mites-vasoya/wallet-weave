@@ -27,6 +27,12 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    console.log("Login Component", this.authService.isLoggedIn());
+    if(this.authService.isLoggedIn()) {
+      this.router.navigate(["/"])
+    }
+
   }
 
   loginBtn(email: string, password: string) {
