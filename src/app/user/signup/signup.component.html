@@ -1,1 +1,78 @@
-<p>signup works!</p>
+<div class="main">
+    <div class="left-panel">
+        <div class="img"></div>
+    </div>
+    <div class="right-panel">
+        <div class="register-div">
+            <p class="title">Register</p>
+            <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+              <div class="form">
+                <div>
+                    <input
+                      type="text"
+                      name="first_name"
+                      id="first_name"
+                      placeholder="First Name"
+                      formControlName = "first_name"
+                      #firstNameField
+                    />
+                    <input
+                      type="text"
+                      name="last_name"
+                      id="last_name"
+                      placeholder="Last Name"
+                      formControlName = "last_name"
+                      #firstNameField
+                    />
+                  </div>
+                <div>
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Enter Email"
+                    formControlName = "email"
+                    #emailField
+                  />
+                </div>
+                <div>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Enter Password"
+                    formControlName = "password"
+                    #passwordField
+                  />
+                </div>
+                <div>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="Confirm Password"
+                      formControlName = "confirm_password"
+                      #confirmPasswordField
+                    />
+                  </div>
+                <div>
+                  <button type="submit" id="register-btn">Register</button>
+                </div>
+              </div>
+            </form>
+      
+            <div class="signin-options">
+              <div class="option">
+                <input type="button" value="Register Using Google" class="btn"/>
+              </div>
+            </div>
+            <hr/>
+      
+            <div class="register-btn">
+              <div>
+                <input type="button" value="Login" class="btn"/>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
