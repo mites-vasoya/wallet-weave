@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../constant';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 interface UserData {
   username: string;
@@ -20,8 +20,8 @@ export class AuthService {
   };
 
   public isUserLoggedIn: boolean = false;
-  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
-  isLoggedIn$ = this.isLoggedInSubject.asObservable();
+  public isLoggedInSubject = new Subject<boolean>();
+  // isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -36,8 +36,13 @@ export class AuthService {
     this.clearUserDetails();
   }
 
+  signup(userDetails : {first_name : string, last_name : string, email : string, password : string} []) {
+    return this.http.post<any>(`${API_URL + 'auth/register'}`, userDetails);
+  }
+
   saveUserDetails(userDetails: {}) {
     localStorage.setItem('user_details', JSON.stringify(userDetails));
+    this.isUserLoggedIn  = true;
     this.isLoggedInSubject.next(true);
   }
 
@@ -48,10 +53,11 @@ export class AuthService {
 
   clearUserDetails() {
     localStorage.clear();
+    this.isUserLoggedIn  = false;
     this.isLoggedInSubject.next(false);
   }
 
-  isLoggedIn(): boolean {
-    return this.isLoggedInSubject.value;
+  userLoginStatus() {
+    return this.isUserLoggedIn;
   }
 }

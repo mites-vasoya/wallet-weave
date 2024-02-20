@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    console.log("Login Component", this.authService.isLoggedIn());
-    if(this.authService.isLoggedIn()) {
+    console.log("user LogIn Status :", this.authService.isUserLoggedIn)
+    if(this.authService.isUserLoggedIn) {
       this.router.navigate(["/"])
     }
 

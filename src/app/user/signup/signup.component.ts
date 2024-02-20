@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit {
   }
   public registerForm : FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
     this.registerForm = this.formBuilder.group({
       first_name : ['', Validators.required],
       last_name : ['', Validators.required],
@@ -42,6 +43,8 @@ export class SignupComponent implements OnInit {
      this.userDetails.password = this.registerForm.value.password;
 
      console.log("User Details : ", this.userDetails);
+
+     this.authService.signup(this.userDetails as any)
   }
 
 }
