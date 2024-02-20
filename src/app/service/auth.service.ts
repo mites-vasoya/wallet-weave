@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   signup(userDetails : {first_name : string, last_name : string, email : string, password : string} []) {
-    return this.http.post<any>(`${API_URL + 'auth/register'}`, userDetails);
+    return this.http.post<any>(`${API_URL + 'auth/signup'}`, userDetails);
   }
 
   saveUserDetails(userDetails: {}) {

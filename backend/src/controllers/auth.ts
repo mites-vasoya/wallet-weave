@@ -13,7 +13,7 @@ router.post("/signup", signUpSchema, signUp);
 async function loginSchema(req: Request, res: Response, next: NextFunction) {
   const schema = Joi.object({
     email: Joi.string().email().required().label("Email"),
-    password: Joi.string().min(8).required().label("Password")
+    password: Joi.string().min(3).required().label("Password")
   });
 
   const validate = await validationFunc(schema, req.body);
@@ -39,7 +39,7 @@ async function login(req: Request, res: Response) {
 async function signUpSchema(req: Request, res: Response, next: NextFunction) {
   const schema = Joi.object({
     email: Joi.string().email().required().label("Email"),
-    password: Joi.string().min(8).required().label("Password"),
+    password: Joi.string().min(3).required().label("Password"),
     mobile_no: Joi.string().length(10).pattern(/^[6-9]\d{9}$/).label("Mobile Number"),
     first_name: Joi.string().trim().required().label("First Name"),
     last_name: Joi.string().trim().required().label("Last Name")

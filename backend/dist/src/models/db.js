@@ -20,30 +20,32 @@ const pool = new pg_1.Pool({
 });
 class db {
     constructor() {
-        this.table = "";
-        this.query = "";
-        this.where = "";
-        this.limit = "";
-        this.offset = "";
-        this.orderBy = "";
+        this.table = '';
+        this.query = '';
+        this.where = '';
+        this.limit = '';
+        this.offset = '';
+        this.orderBy = '';
     }
     insert(data) {
         return __awaiter(this, void 0, void 0, function* () {
             let colArray = Object.keys(data);
             let dataArray = Object.values(data);
-            console.log("Data Array : ", dataArray);
-            let query = `INSERT INTO ${this.table} (${colArray.join(', ')}) VALUES (${dataArray.map((_, index) => `$${index + 1}`).join(', ')}) RETURNING *`;
+            // console.log("Data Array : ", dataArray);
+            let query = `INSERT INTO ${this.table} (${colArray.join(', ')}) VALUES (${dataArray
+                .map((_, index) => `$${index + 1}`)
+                .join(', ')}) RETURNING *`;
             let result = yield pool.query(query, dataArray);
-            console.log("Query : ", dataArray);
+            // console.log('Query : ', dataArray);
             if (!result.rowCount) {
                 return [];
             }
             return result.rows;
         });
     }
-    selectOne(fields = "*") {
+    selectOne(fields = '*') {
         return __awaiter(this, void 0, void 0, function* () {
-            this.query = "SELECT " + fields + " FROM " + this.table + this.where;
+            this.query = 'SELECT ' + fields + ' FROM ' + this.table + this.where;
             let result = yield pool.query(this.query);
             if (!result.rowCount) {
                 return [];
@@ -51,9 +53,17 @@ class db {
             return result.rows;
         });
     }
-    listRecords(fields = "*") {
+    listRecords(fields = '*') {
         return __awaiter(this, void 0, void 0, function* () {
-            this.query = "SELECT " + fields + " FROM " + this.table + this.where + this.orderBy + this.limit + this.offset;
+            this.query =
+                'SELECT ' +
+                    fields +
+                    ' FROM ' +
+                    this.table +
+                    this.where +
+                    this.orderBy +
+                    this.limit +
+                    this.offset;
             // console.log("Query : ", this.query);
             let result = yield pool.query(this.query);
             if (!result.rowCount) {

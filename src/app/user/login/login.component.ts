@@ -46,9 +46,11 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.email, this.password).subscribe((data : any) => {
       this.userDetails = data;
-      this.authService.saveUserDetails(data.data[0]);
-
-      this.router.navigate(['/']);
+      console.log("Login response : ", data);
+      if(data.status == 200 && data.data.length > 0) {
+        this.authService.saveUserDetails(data.data[0]);
+        this.router.navigate(['/']);
+      }
     })
   }
 }

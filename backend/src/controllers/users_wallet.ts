@@ -25,7 +25,7 @@ async function listWallet (req : Request, res : Response) {
   let users_walletObj = new dbusers_wallet();
   let result : any = await users_walletObj.listUsersWallets(req.body.user_id);
 
-  console.log(result);
+  // console.log(result);
 
   if(result.error) {
     res.json(responseFunc(400, result.message, result.data));

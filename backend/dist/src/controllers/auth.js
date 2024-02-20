@@ -24,7 +24,7 @@ function loginSchema(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const schema = joi_1.default.object({
             email: joi_1.default.string().email().required().label("Email"),
-            password: joi_1.default.string().min(8).required().label("Password")
+            password: joi_1.default.string().min(3).required().label("Password")
         });
         const validate = yield (0, functions_1.validationFunc)(schema, req.body);
         if (validate.error) {
@@ -51,7 +51,7 @@ function signUpSchema(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const schema = joi_1.default.object({
             email: joi_1.default.string().email().required().label("Email"),
-            password: joi_1.default.string().min(8).required().label("Password"),
+            password: joi_1.default.string().min(3).required().label("Password"),
             mobile_no: joi_1.default.string().length(10).pattern(/^[6-9]\d{9}$/).label("Mobile Number"),
             first_name: joi_1.default.string().trim().required().label("First Name"),
             last_name: joi_1.default.string().trim().required().label("Last Name")
