@@ -17,6 +17,14 @@ import {AuthGuard} from "./service/auth-guard.service";
 import {AuthService} from "./service/auth.service";
 import {ApiService} from "./service/api.service";
 import {ReactiveFormsModule} from "@angular/forms";
+import {NewEntryComponent} from "./shared/components/new-entry/new-entry.component";
+import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule, MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 
 const appRoute : Routes = [
@@ -32,6 +40,7 @@ const appRoute : Routes = [
     DashboardComponent,
     LoginComponent,
     SignupComponent,
+    NewEntryComponent,
     NavBtnHoverDirective,
   ],
   imports: [
@@ -42,7 +51,18 @@ const appRoute : Routes = [
     GoogleChartsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoute),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogActions,
+    MatDialogContent,
+    MatDialogClose,
+    MatButtonModule,
+    MatDialogTitle,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]

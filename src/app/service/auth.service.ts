@@ -13,6 +13,7 @@ interface UserData {
   providedIn: 'root',
 })
 export class AuthService {
+  private readonly STORAGE_KEY = 'userLoggedIn';
   public userData: UserData = {
     username: 'Hari',
     email: 'hari@gmail.com',
@@ -20,10 +21,12 @@ export class AuthService {
   };
 
   public isUserLoggedIn: boolean = false;
-  public isLoggedInSubject = new Subject<boolean>();
+  public  isLoggedInSubject = new Subject<boolean>();
   // isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.isUserLoggedIn = this.checkLoginStatus();
+  }
 
   login(email: string, password: string) {
     return this.http.post<any>(`${API_URL + 'auth/login'}`, {
@@ -42,8 +45,9 @@ export class AuthService {
 
   saveUserDetails(userDetails: {}) {
     localStorage.setItem('user_details', JSON.stringify(userDetails));
+    localStorage.setItem(this.STORAGE_KEY, 'true');
     this.isUserLoggedIn  = true;
-    this.isLoggedInSubject.next(true);
+    this.isLoggedInSubject.next(this.checkLoginStatus());
   }
 
   getUserDetails() {
@@ -53,11 +57,16 @@ export class AuthService {
 
   clearUserDetails() {
     localStorage.clear();
+    localStorage.removeItem(this.STORAGE_KEY);
     this.isUserLoggedIn  = false;
-    this.isLoggedInSubject.next(false);
+    this.isLoggedInSubject.next(this.checkLoginStatus());
   }
 
   userLoginStatus() {
     return this.isUserLoggedIn;
+  }
+
+  private checkLoginStatus(): boolean {
+    return localStorage.getItem(this.STORAGE_KEY) === 'true';
   }
 }

@@ -20,7 +20,6 @@ async function listWalletSchema(req: Request, res: Response, next: NextFunction)
   next();
 }
 
-
 async function listWallet (req : Request, res : Response) {
   let users_walletObj = new dbusers_wallet();
   let result : any = await users_walletObj.listUsersWallets(req.body.user_id);

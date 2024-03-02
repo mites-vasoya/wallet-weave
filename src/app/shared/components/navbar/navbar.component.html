@@ -16,8 +16,9 @@
                 <li routerLink = "login">Login</li>
                 <li routerLink = "signup">Register</li>
             </ul>
-            <ul *ngIf="isUserLoggedIn">    
-                <li (click)="onLogOut()">Logout</li>
+            <ul *ngIf="isUserLoggedIn">
+              <li (click)="openNewEntrySheet('0ms', '0ms')">Add Entry</li>
+              <li (click)="onLogOut()">Logout</li>
             </ul>
         </div>
     </div>

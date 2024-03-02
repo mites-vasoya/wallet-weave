@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+.dialog {
+  border : 6px solid #ee0726;
+  height : fit-content;
+  width : 50vw;
+}
+
+.dialog > p {
+  border : 1px solid blue;
+  margin : 0 0 0 0;
+  padding : 10px 20px;
+  box-sizing: border-box;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  font-size: 30px;
+}
+
+mat-dialog-content {
+  border : 3px solid rebeccapurple;
+  height: 40vh;
+}
+
+mat-dialog-actions {
+  border : 4px solid #bf47e7;
+  margin : auto auto 0 auto;
+  padding : 5px 20px 20px 20px;
+  height: 3vh;
+  display: flex;
+  justify-content: right;
+}
