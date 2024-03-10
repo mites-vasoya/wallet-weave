@@ -18,13 +18,13 @@
     </div>
     <div class="middle-cards">
       <div class="card">
-        <mat-progress-spinner
-          class="card-pbar"
-          color="primary"
-          mode="determinate"
-          diameter="110"
-          [value]="progressValue"
-        ></mat-progress-spinner>
+<!--        <mat-progress-spinner-->
+<!--          class="card-pbar"-->
+<!--          color="primary"-->
+<!--          mode="determinate"-->
+<!--          diameter="110"-->
+<!--          [value]="progressValue"-->
+<!--        ></mat-progress-spinner>-->
         <div class="card-content">
           <p class="title">Total Expense</p>
           <p class="balance">20000</p>
@@ -32,13 +32,13 @@
         </div>
       </div>
       <div class="card">
-        <mat-progress-spinner
-          class="card-pbar"
-          color="primary"
-          mode="determinate"
-          diameter="110"
-          [value]="progressValue"
-        ></mat-progress-spinner>
+<!--        <mat-progress-spinner-->
+<!--          class="card-pbar"-->
+<!--          color="primary"-->
+<!--          mode="determinate"-->
+<!--          diameter="110"-->
+<!--          [value]="progressValue"-->
+<!--        ></mat-progress-spinner>-->
         <div class="card-content">
           <p class="title">Total Expense</p>
           <p class="balance">20000</p>
@@ -46,14 +46,23 @@
         </div>
       </div>
     </div>
-    <div class="charts">
-      <div class="chart1">
-        <google-chart
-      [data]="chartData"
-      [width]="chartWidth"
-      [height]="chartHeight"
-      [type]="chartType"
-    ></google-chart>
+    <div class="charts-div">
+      <div class="charts">
+        <div class="monthly-income-expense">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [xaxis]="chartOptions.xaxis"
+          [stroke]="chartOptions.stroke"
+          [colors]="chartOptions.colors"
+          [dataLabels]="chartOptions.dataLabels"
+          [legend]="chartOptions.legend"
+          [markers]="chartOptions.markers"
+          [grid]="chartOptions.grid"
+          [yaxis]="chartOptions.yaxis"
+          [title]="chartOptions.title"
+        ></apx-chart>
+        </div>
       </div>
     </div>
   </div>

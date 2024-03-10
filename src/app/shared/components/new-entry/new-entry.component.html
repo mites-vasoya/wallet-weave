@@ -1,32 +1,48 @@
 <div class="dialog">
   <p>Add Expense</p>
-  <form [formGroup]="newExpenseForm">
+  <form (ngSubmit)="onSubmit()" [formGroup]="newExpenseForm">
     <mat-dialog-content>
-      <div class="example-form-fields">
-        <mat-form-field>
-          <mat-label>Select Account</mat-label>
-          <mat-select formControlName="account">
-            <mat-option *ngFor="let account of accountType" [value]="account.key">
-              {{ account.value }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field
-          [hideRequiredMarker]="'true'">
-          <input matInput placeholder="Amount" required>
-        </mat-form-field>
+      <div class="form-fields">
+        <div>
+          <mat-form-field>
+            <mat-label>Select Account</mat-label>
+            <mat-select formControlName="account">
+              <mat-option *ngFor="let account of accountType" [value]="account.key">
+                {{ account.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Payment Type</mat-label>
+            <mat-select formControlName="paymentType">
+              <mat-option *ngFor="let ptype of paymentType" [value]="ptype.id">
+                {{ ptype.payment_mode_name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Amount</mat-label>
+            <input matInput required formControlName="amount">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepickerFilter]="futureDateDisableFilter" [matDatepicker]="picker" formControlName="paymentDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
         <mat-form-field class="example-full-width">
-          <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepickerFilter]="futureDateDisableFilter" [matDatepicker]="picker">
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-label>Leave a Note</mat-label>
+          <textarea matInput formControlName="note"></textarea>
         </mat-form-field>
       </div>
     </mat-dialog-content>
     <mat-dialog-actions>
-      <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button mat-dialog-close cdkFocusInitial>Add</button>
+<!--      <button mat-button mat-dialog-close>Cancel</button>-->
+      <button mat-button mat-dialog-close cdkFocusInitial style="color: white; background-color: rgb(37, 37, 37)" type="submit">Add</button>
     </mat-dialog-actions>
   </form>
 </div>

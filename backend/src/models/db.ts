@@ -1,5 +1,5 @@
-import { Pool } from 'pg';
-import { object } from 'joi';
+import {Pool} from 'pg';
+import {object} from 'joi';
 
 const pool = new Pool({
   user: 'mitesh',
@@ -10,7 +10,8 @@ const pool = new Pool({
 });
 
 export class db {
-  constructor() {}
+  constructor() {
+  }
 
   table: string = '';
   query: string = '';
@@ -50,15 +51,7 @@ export class db {
   }
 
   async listRecords(fields: string = '*') {
-    this.query =
-      'SELECT ' +
-      fields +
-      ' FROM ' +
-      this.table +
-      this.where +
-      this.orderBy +
-      this.limit +
-      this.offset;
+    this.query = 'SELECT ' + fields + ' FROM ' + this.table + this.where + this.orderBy + this.limit + this.offset;
 
     // console.log("Query : ", this.query);
 
@@ -67,6 +60,15 @@ export class db {
     if (!result.rowCount) {
       return [];
     }
+    return result.rows;
+  }
+
+  async allRecords(fields: string = "*") {
+    this.query = 'SELECT ' + fields + ' FROM ' + this.table + this.where + this.orderBy;
+
+    let result = await pool.query(this.query);
+
+    if(!result.rowCount) return [];
     return result.rows;
   }
 

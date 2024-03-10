@@ -3,13 +3,14 @@
 }
 
 .dialog {
-  border : 6px solid #ee0726;
+  /*border : 6px solid #ee0726;*/
   height : fit-content;
   width : 50vw;
+  padding : 12px 0;
 }
 
 .dialog > p {
-  border : 1px solid blue;
+  /*border : 1px solid blue;*/
   margin : 0 0 0 0;
   padding : 10px 20px;
   box-sizing: border-box;
@@ -22,15 +23,43 @@
 }
 
 mat-dialog-content {
-  border : 3px solid rebeccapurple;
-  height: 40vh;
+  /*border : 3px solid rebeccapurple;*/
+  height: fit-content;
+  padding : 0;
+}
+
+mat-dialog-content > .form-fields {
+  /*border: 3px solid #3498db;*/
+  margin : 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.form-fields > div {
+  /*border : 1px solid mediumvioletred;*/
+  width: 100%;
+  height: fit-content;
+  margin :  0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-fields > div > mat-form-field {
+  width : 48%;
 }
 
 mat-dialog-actions {
-  border : 4px solid #bf47e7;
+  /*border : 4px solid #bf47e7;*/
   margin : auto auto 0 auto;
   padding : 5px 20px 20px 20px;
   height: 3vh;
   display: flex;
   justify-content: right;
 }
+
+mat-dialog-actions > button {
+  height: 40px;
+  width: 100px;
+}
+

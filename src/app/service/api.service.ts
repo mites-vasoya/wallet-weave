@@ -13,4 +13,8 @@ export class ApiService {
   fetchUsersWallet(user_id : number): Observable<any>{
     return this.http.post<any>(`${API_URL + "users_wallet/list"}`, {user_id : user_id});
   }
+
+  fetchDashboardData(user_id : number) : Observable<any> {
+    return this.http.post<any>(`${API_URL + "users_wallet/list"}`, {user_id : user_id})
+  }
 }

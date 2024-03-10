@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
       })
 
     this.isUserLoggedIn = this.authService.isUserLoggedIn;
-      this.openNewEntrySheet('0ms', '0ms');
+    // this.openNewEntrySheet('0ms', '0ms');
   }
 
 
@@ -34,8 +34,9 @@ export class NavbarComponent implements OnInit {
 
   openNewEntrySheet(enterAnimationDuration: string, exitAnimationDuration: string) {
     this.dialog.open(NewEntryComponent, {
-      minHeight : "51vh",
+      // minHeight : "51vh",
       height: "fit-content",
+      maxHeight : "51vh",
       minWidth: "40vw",
       maxWidth: "60vw",
       enterAnimationDuration,

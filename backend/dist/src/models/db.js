@@ -55,20 +55,21 @@ class db {
     }
     listRecords(fields = '*') {
         return __awaiter(this, void 0, void 0, function* () {
-            this.query =
-                'SELECT ' +
-                    fields +
-                    ' FROM ' +
-                    this.table +
-                    this.where +
-                    this.orderBy +
-                    this.limit +
-                    this.offset;
+            this.query = 'SELECT ' + fields + ' FROM ' + this.table + this.where + this.orderBy + this.limit + this.offset;
             // console.log("Query : ", this.query);
             let result = yield pool.query(this.query);
             if (!result.rowCount) {
                 return [];
             }
+            return result.rows;
+        });
+    }
+    allRecords(fields = "*") {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.query = 'SELECT ' + fields + ' FROM ' + this.table + this.where + this.orderBy;
+            let result = yield pool.query(this.query);
+            if (!result.rowCount)
+                return [];
             return result.rows;
         });
     }
